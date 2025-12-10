@@ -45,3 +45,19 @@ hist(df_long$Rate,
      xlab = "Marriage Rate (per 1,000)",
      col = "lightblue",
      border = "black")
+
+# ===========================
+# PEARSON CORRELATION TEST
+# ===========================
+correlation_result <- cor.test(df_long$Year, df_long$Rate, method = "pearson")
+
+cat("\n========== CORRELATION ANALYSIS ==========\n")
+cat("Pearson Correlation Coefficient (r):", correlation_result$estimate, "\n")
+cat("t-statistic:", correlation_result$statistic, "\n")
+cat("p-value:", correlation_result$p.value, "\n")
+
+if (correlation_result$p.value < 0.05) {
+  cat("\nResult: Reject H0 - Significant correlation exists\n")
+} else {
+  cat("\nResult: Fail to reject H0 - No significant correlation\n")
+}
