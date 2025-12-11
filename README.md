@@ -28,3 +28,6 @@ source("analysis.R")
 
 ## Results
 The analysis reveals a statistically significant negative correlation (p < 0.05) between year and marriage rates, indicating declining marriage rates over time across U.S. states.
+
+## Updates
+- **Dec 10, 2025:** During final testing, identified and resolved a data parsing issue where empty columns in the CSV caused plot errors. Updated R script to handle edge cases in data preprocessing.
